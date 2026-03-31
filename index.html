@@ -11,22 +11,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #09090b;
-  --surface: #18181b;
-  --surface2: #27272a;
-  --border: rgba(255,255,255,0.08);
-  --border2: rgba(255,255,255,0.14);
-  --text: #fafafa;
-  --text2: #a1a1aa;
-  --text3: #52525b;
-  --accent: #f59e0b;
-  --accent2: rgba(245,158,11,0.12);
-  --green: #22c55e;
-  --green2: rgba(34,197,94,0.1);
-  --red: #ef4444;
-  --red2: rgba(239,68,68,0.1);
-  --blue: #3b82f6;
-  --blue2: rgba(59,130,246,0.1);
+  --bg: #f0f4ff;
+  --surface: #ffffff;
+  --surface2: #eef2fb;
+  --border: rgba(37,99,235,0.1);
+  --border2: rgba(37,99,235,0.2);
+  --text: #0f172a;
+  --text2: #334155;
+  --text3: #94a3b8;
+  --accent: #2563eb;
+  --accent2: rgba(37,99,235,0.08);
+  --green: #059669;
+  --green2: rgba(5,150,105,0.08);
+  --red: #dc2626;
+  --red2: rgba(220,38,38,0.08);
+  --blue: #2563eb;
+  --blue2: rgba(37,99,235,0.08);
   --mono: 'JetBrains Mono', monospace;
   --sans: 'Inter', sans-serif;
   --display: 'Syne', sans-serif;
@@ -40,17 +40,18 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 /* HEADER */
 .header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(9,9,11,0.92); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
+  background: #1d4ed8;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(37,99,235,0.25);
 }
 .header-left { display: flex; align-items: center; gap: 12px; }
-.logo { width: 36px; height: 36px; border-radius: 9px; background: linear-gradient(135deg,#f59e0b,#ef4444); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-.header-title { font-family: var(--display); font-size: 15px; font-weight: 800; letter-spacing: -0.02em; }
-.header-sub { font-size: 10px; color: var(--accent); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.logo { width: 36px; height: 36px; border-radius: 9px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.header-title { font-family: var(--display); font-size: 15px; font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+.header-sub { font-size: 10px; color: rgba(255,255,255,0.7); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 .header-right { display: flex; align-items: center; gap: 8px; }
-.badge-pill { font-size: 10px; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--border2); color: var(--text2); background: var(--surface); }
-.badge-pill.active { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
+.badge-pill { font-size: 10px; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.12); }
+.badge-pill.active { border-color: #fff; color: #fff; background: rgba(255,255,255,0.2); }
 
 /* LAYOUT */
 .layout { display: flex; min-height: calc(100vh - 61px); }
@@ -65,46 +66,46 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 /* REGIME SELECTOR */
 .regime-grid { display: flex; gap: 8px; margin-bottom: 10px; }
 .regime-btn { flex: 1; padding: 12px 10px; border-radius: var(--radius); border: 1.5px solid var(--border2); background: var(--surface2); cursor: pointer; text-align: center; transition: all 0.18s; }
-.regime-btn:hover { border-color: var(--accent); }
-.regime-btn.active { border-color: var(--accent); background: var(--accent2); }
+.regime-btn:hover { border-color: var(--accent); background: var(--accent2); }
+.regime-btn.active { border-color: var(--accent); background: var(--accent2); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
 .regime-btn .rl { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); margin-bottom: 5px; }
 .regime-btn.active .rl { color: var(--accent); }
 .regime-btn .rv { font-size: 16px; font-family: var(--mono); font-weight: 500; color: var(--text); }
-.regime-badge { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent); color: #000; padding: 2px 7px; border-radius: 20px; margin-top: 5px; }
+.regime-badge { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 2px 7px; border-radius: 20px; margin-top: 5px; }
 .saving-line { text-align: center; font-size: 11px; color: var(--green); font-weight: 500; margin-top: 6px; min-height: 16px; }
 
 /* TABS */
-.tabs { display: flex; background: var(--surface2); border-radius: var(--radius-sm); padding: 3px; margin-bottom: 12px; gap: 2px; }
+.tabs { display: flex; background: var(--surface2); border-radius: var(--radius-sm); padding: 3px; margin-bottom: 12px; gap: 2px; border: 1px solid var(--border); }
 .tab-btn { flex: 1; padding: 7px 6px; border: none; background: transparent; color: var(--text3); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; border-radius: 5px; transition: all 0.15s; }
-.tab-btn:hover { color: var(--text2); }
-.tab-btn.active { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+.tab-btn:hover { color: var(--accent); background: var(--accent2); }
+.tab-btn.active { background: var(--accent); color: #fff; box-shadow: 0 1px 4px rgba(37,99,235,0.3); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
 /* ACCORDION */
 .acc { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 8px; overflow: hidden; }
 .acc-trigger { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; cursor: pointer; background: var(--surface2); transition: background 0.15s; user-select: none; }
-.acc-trigger:hover { background: rgba(255,255,255,0.04); }
+.acc-trigger:hover { background: var(--accent2); }
 .acc-trigger span { font-size: 11px; font-weight: 600; color: var(--text2); display: flex; align-items: center; gap: 6px; }
 .acc-icon { width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; color: var(--text3); font-size: 10px; transition: transform 0.2s; }
 .acc[open] .acc-icon { transform: rotate(180deg); }
-.acc[open] .acc-trigger { background: rgba(255,255,255,0.02); }
-.acc-body { padding: 12px; background: var(--bg); border-top: 1px solid var(--border); }
+.acc[open] .acc-trigger { background: var(--accent2); }
+.acc-body { padding: 12px; background: var(--surface); border-top: 1px solid var(--border); }
 
 /* FORM ELEMENTS */
 .field { margin-bottom: 10px; }
 label { display: block; font-size: 10px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 4px; }
 input[type=number], select {
   width: 100%; padding: 8px 10px;
-  background: var(--surface2); border: 1px solid var(--border2);
+  background: #fff; border: 1px solid var(--border2);
   border-radius: var(--radius-sm); color: var(--text);
   font-family: var(--mono); font-size: 12px; outline: none;
-  transition: border-color 0.15s; -moz-appearance: textfield; appearance: textfield;
+  transition: border-color 0.15s, box-shadow 0.15s; -moz-appearance: textfield; appearance: textfield;
 }
 input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
-input[type=number]:focus, select:focus { border-color: var(--accent); }
+input[type=number]:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
 select { font-family: var(--sans); cursor: pointer; }
-select option { background: #18181b; }
+select option { background: #fff; color: var(--text); }
 .hint { font-size: 10px; color: var(--text3); margin-top: 3px; line-height: 1.5; }
 .row2 { display: flex; gap: 8px; }
 .row2 > .field { flex: 1; }
@@ -118,16 +119,16 @@ select option { background: #18181b; }
 .tag-both { background: var(--green2); color: var(--green); border: 1px solid rgba(34,197,94,0.2); }
 
 /* RESULT PANEL */
-.big-result { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 10px; text-align: center; }
-.big-result .lbl { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text2); margin-bottom: 6px; }
-.big-result .amount { font-size: 38px; font-family: var(--mono); font-weight: 500; color: var(--accent); line-height: 1; margin-bottom: 6px; }
-.big-result .eff { font-size: 11px; color: var(--text3); }
-.big-result .eff strong { color: var(--text2); }
-.inhand { display: flex; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+.big-result { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 60%, #3b82f6 100%); border: none; border-radius: var(--radius); padding: 20px; margin-bottom: 10px; text-align: center; box-shadow: 0 4px 20px rgba(37,99,235,0.3); }
+.big-result .lbl { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.75); margin-bottom: 6px; }
+.big-result .amount { font-size: 38px; font-family: var(--mono); font-weight: 500; color: #fff; line-height: 1; margin-bottom: 6px; }
+.big-result .eff { font-size: 11px; color: rgba(255,255,255,0.65); }
+.big-result .eff strong { color: rgba(255,255,255,0.9); }
+.inhand { display: flex; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.2); }
 .inhand-item { flex: 1; text-align: center; }
-.inhand-item + .inhand-item { border-left: 1px solid var(--border); }
-.inhand-item .il { font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-.inhand-item .iv { font-size: 14px; font-family: var(--mono); font-weight: 500; color: var(--green); }
+.inhand-item + .inhand-item { border-left: 1px solid rgba(255,255,255,0.2); }
+.inhand-item .il { font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.inhand-item .iv { font-size: 14px; font-family: var(--mono); font-weight: 500; color: #fff; }
 
 /* REBATE BANNER */
 .rebate-banner { background: var(--green2); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-sm); padding: 9px 12px; margin-bottom: 10px; font-size: 11px; color: var(--green); display: flex; gap: 8px; align-items: center; }
@@ -164,12 +165,12 @@ select option { background: #18181b; }
 .ci-sub { font-size: 10px; color: var(--text3); margin-top: 1px; }
 
 /* FOOTER */
-.footer { border-top: 1px solid var(--border); padding: 24px 20px; background: var(--surface); margin-top: 0; }
+.footer { border-top: 1px solid var(--border); padding: 24px 20px; background: #fff; margin-top: 0; }
 .footer-inner { max-width: 900px; margin: 0 auto; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
 .footer-note { font-size: 11px; color: var(--text3); line-height: 1.6; max-width: 600px; }
 .footer-share { display: flex; gap: 8px; flex-wrap: wrap; }
 .share-btn { padding: 7px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid var(--border2); background: var(--surface2); color: var(--text2); transition: all 0.15s; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
-.share-btn:hover { border-color: var(--accent); color: var(--accent); }
+.share-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
 
 /* SPECIAL RESULT ROWS */
 .tds-result { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 10px; display: flex; justify-content: space-between; font-size: 11px; margin-top: 6px; }
@@ -182,10 +183,11 @@ select option { background: #18181b; }
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: rgba(37,99,235,0.2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(37,99,235,0.4); }
 
 /* SHARE TOAST */
-.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(60px); background: var(--surface); border: 1px solid var(--border2); border-radius: 20px; padding: 8px 18px; font-size: 12px; color: var(--text); opacity: 0; transition: all 0.3s; z-index: 999; }
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(60px); background: #1d4ed8; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 8px 18px; font-size: 12px; color: #fff; opacity: 0; transition: all 0.3s; z-index: 999; box-shadow: 0 4px 16px rgba(37,99,235,0.4); }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
 </head>
@@ -203,7 +205,7 @@ select option { background: #18181b; }
   <div class="header-right">
     <span class="badge-pill active" id="regime-badge">New Regime</span>
     <span class="badge-pill">Free · No login</span>
-    <button class="share-btn" onclick="copyLink()">🔗 Share</button>
+    <button class="share-btn" style="border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.15);color:#fff" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'" onclick="copyLink()">🔗 Share</button>
   </div>
 </header>
 
@@ -275,10 +277,48 @@ select option { background: #18181b; }
     <details class="acc" open>
       <summary class="acc-trigger"><span>💼 Salary &amp; Employment</span><span class="acc-icon">▼</span></summary>
       <div class="acc-body">
-        <div class="field"><label>Gross Salary / CTC (Annual)</label><input type="number" id="salary" value="1500000" min="0" oninput="update()"><div class="hint">Total salary before any deductions or exemptions</div></div>
+        <!-- Salary slip upload -->
+        <div style="background:var(--accent2);border:1.5px dashed var(--accent);border-radius:var(--radius);padding:14px;margin-bottom:14px;text-align:center;cursor:pointer;transition:all 0.2s" id="upload-zone" onclick="document.getElementById('slip-file').click()" ondragover="event.preventDefault();this.style.background='rgba(37,99,235,0.15)'" ondragleave="this.style.background='var(--accent2)'" ondrop="handleDrop(event)">
+          <input type="file" id="slip-file" accept="image/*,.pdf" style="display:none" onchange="handleSlipUpload(event)">
+          <div style="font-size:22px;margin-bottom:6px">📄</div>
+          <div style="font-size:12px;font-weight:600;color:var(--accent)">Upload Salary Slip</div>
+          <div style="font-size:10px;color:var(--text3);margin-top:3px">Drag & drop or click · JPG, PNG or PDF · AI auto-fills all fields</div>
+        </div>
+
+        <!-- AI processing status -->
+        <div id="slip-status" style="display:none;padding:10px 12px;border-radius:var(--radius-sm);margin-bottom:12px;font-size:11px;font-weight:500"></div>
+
+        <!-- Monthly / Annual toggle -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--text3)">Input Mode</span>
+          <div style="display:flex;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:2px;gap:2px">
+            <button id="mode-monthly" onclick="setSalaryMode('monthly')" style="padding:4px 12px;border:none;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;background:var(--accent);color:#fff;transition:all 0.15s">Monthly</button>
+            <button id="mode-annual" onclick="setSalaryMode('annual')" style="padding:4px 12px;border:none;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;background:transparent;color:var(--text3);transition:all 0.15s">Annual</button>
+          </div>
+        </div>
+
+        <div id="mode-note" style="font-size:10px;color:var(--text3);margin-bottom:10px;padding:6px 10px;background:var(--surface2);border-radius:var(--radius-sm);border:1px solid var(--border)">
+          Enter <strong>monthly</strong> figures — annual values auto-calculated (×12)
+        </div>
+
+        <div class="field">
+          <label id="salary-label">Gross Salary / CTC</label>
+          <input type="number" id="salary" value="" placeholder="0" min="0" oninput="update()">
+          <div class="hint" id="salary-hint">Monthly gross salary before deductions</div>
+        </div>
         <div class="row2">
-          <div class="field"><label>Basic Salary (Annual)</label><input type="number" id="basic" value="600000" min="0" oninput="update()"><div class="hint">For HRA &amp; NPS limits</div></div>
-          <div class="field"><label>Dearness Allowance</label><input type="number" id="da" value="0" min="0" oninput="update()"></div>
+          <div class="field">
+            <label id="basic-label">Basic Salary</label>
+            <input type="number" id="basic" value="" placeholder="0" min="0" oninput="update()">
+            <div class="hint">For HRA &amp; NPS limits</div>
+          </div>
+          <div class="field">
+            <label>DA (Dearness Allowance)</label>
+            <input type="number" id="da" value="" placeholder="0" min="0" oninput="update()">
+          </div>
+        </div>
+        <div id="annual-preview" style="display:none;padding:8px 10px;background:var(--accent2);border:1px solid var(--border2);border-radius:var(--radius-sm);font-size:11px;color:var(--text2);margin-top:-4px;margin-bottom:8px">
+          Annual CTC: <strong id="annual-ctc-preview" style="font-family:var(--mono);color:var(--accent)">₹0</strong> &nbsp;·&nbsp; Annual Basic: <strong id="annual-basic-preview" style="font-family:var(--mono);color:var(--accent)">₹0</strong>
         </div>
       </div>
     </details>
@@ -576,33 +616,34 @@ select option { background: #18181b; }
     🎉 Section 87A rebate of <strong id="rebate-amt">₹0</strong> applied — <span id="rebate-desc"></span>
   </div>
 
-  <!-- Breakdown -->
-  <div class="card">
-    <div class="card-title">📋 Tax Computation Breakdown</div>
-    <div id="breakdown"></div>
+  <!-- Compact summary card -->
+  <div class="card" style="padding:0;overflow:hidden">
+    <div style="display:flex;border-bottom:1px solid var(--border);background:var(--surface2)">
+      <button class="sum-tab active" onclick="showSumTab('breakdown',this)" style="flex:1;padding:9px 4px;border:none;background:transparent;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;color:var(--accent);border-bottom:2px solid var(--accent)">📋 Breakdown</button>
+      <button class="sum-tab" onclick="showSumTab('slabs',this)" style="flex:1;padding:9px 4px;border:none;background:transparent;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;color:var(--text3);border-bottom:2px solid transparent">📊 Slabs</button>
+      <button class="sum-tab" onclick="showSumTab('deductions',this)" style="flex:1;padding:9px 4px;border:none;background:transparent;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;color:var(--text3);border-bottom:2px solid transparent">🧾 Deductions</button>
+      <button class="sum-tab" onclick="showSumTab('fy27',this)" style="flex:1;padding:9px 4px;border:none;background:transparent;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;color:var(--text3);border-bottom:2px solid transparent">🆕 FY27</button>
+    </div>
+
+    <div id="sum-breakdown" class="sum-panel" style="padding:14px">
+      <div id="breakdown"></div>
+    </div>
+
+    <div id="sum-slabs" class="sum-panel" style="display:none;padding:14px">
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text3);margin-bottom:10px" id="slabs-title">Tax Slab Rates — New Regime</div>
+      <div id="slabs"></div>
+    </div>
+
+    <div id="sum-deductions" class="sum-panel" style="display:none;padding:14px">
+      <div id="ded-summary"></div>
+    </div>
+
+    <div id="sum-fy27" class="sum-panel" style="display:none;padding:14px">
+      <div id="changes-list"></div>
+    </div>
   </div>
 
-  <!-- Slabs -->
-  <div class="card">
-    <div class="card-title" id="slabs-title">📊 Tax Slab Rates — New Regime</div>
-    <div id="slabs"></div>
-  </div>
-
-  <!-- Deduction Summary -->
-  <div class="card">
-    <div class="card-title">🧾 Deduction Summary</div>
-    <div id="ded-summary"></div>
-  </div>
-
-  <!-- FY27 Changes -->
-  <div class="card">
-    <div class="card-title">🆕 All FY 2026-27 Changes Applied</div>
-    <div id="changes-list"></div>
-  </div>
-
-  <div class="disclaimer">
-    ⚠️ This calculator is for <strong>educational and informational purposes only</strong>. Actual tax liability may vary based on your specific circumstances, applicable rules, and any changes not captured here. Please consult a qualified Chartered Accountant or tax advisor before filing your income tax return. Based on Union Budget 2026 and Income Tax Act 2025.
-  </div>
+  <div class="disclaimer">⚠️ For educational purposes only. Consult a qualified CA before filing. Based on Union Budget 2026 &amp; Income Tax Act 2025.</div>
 
 </div><!-- end panel-right -->
 </div><!-- end layout -->
@@ -655,8 +696,185 @@ const fc=n=>'₹'+fmt(n);
 function slabTax(inc,sl){let t=0;for(const s of sl){if(inc<=s.a)break;t+=(Math.min(inc,s.b===1e15?inc:s.b)-s.a)*s.r;}return t;}
 function surcharge(inc,r){if(inc>5e7)return r==='new'?.25:.37;if(inc>2e7)return .25;if(inc>1e7)return .15;if(inc>5e6)return .10;return 0;}
 
+// ==================== SALARY MODE ====================
+let salaryMode = 'monthly'; // 'monthly' | 'annual'
+
+function setSalaryMode(mode) {
+  salaryMode = mode;
+  const isMonthly = mode === 'monthly';
+  document.getElementById('mode-monthly').style.background = isMonthly ? 'var(--accent)' : 'transparent';
+  document.getElementById('mode-monthly').style.color = isMonthly ? '#fff' : 'var(--text3)';
+  document.getElementById('mode-annual').style.background = !isMonthly ? 'var(--accent)' : 'transparent';
+  document.getElementById('mode-annual').style.color = !isMonthly ? '#fff' : 'var(--text3)';
+  document.getElementById('salary-label').textContent = isMonthly ? 'Gross Salary / CTC (Monthly)' : 'Gross Salary / CTC (Annual)';
+  document.getElementById('basic-label').textContent = isMonthly ? 'Basic Salary (Monthly)' : 'Basic Salary (Annual)';
+  document.getElementById('salary-hint').textContent = isMonthly ? 'Monthly gross salary — we multiply ×12 for annual tax calc' : 'Annual gross salary before deductions';
+  document.getElementById('mode-note').innerHTML = isMonthly
+    ? 'Enter <strong>monthly</strong> figures — annual values auto-calculated (×12)'
+    : 'Enter <strong>annual</strong> figures directly';
+  document.getElementById('annual-preview').style.display = isMonthly ? '' : 'none';
+  update();
+}
+
+function getAnnualSalary() {
+  const raw = gi('salary');
+  return salaryMode === 'monthly' ? raw * 12 : raw;
+}
+function getAnnualBasic() {
+  const raw = gi('basic');
+  return salaryMode === 'monthly' ? raw * 12 : raw;
+}
+function getAnnualDA() {
+  const raw = gi('da');
+  return salaryMode === 'monthly' ? raw * 12 : raw;
+}
+
+// ==================== SALARY SLIP UPLOAD ====================
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('upload-zone').style.background = 'var(--accent2)';
+  const file = e.dataTransfer.files[0];
+  if (file) processSlip(file);
+}
+
+function handleSlipUpload(e) {
+  const file = e.target.files[0];
+  if (file) processSlip(file);
+}
+
+async function processSlip(file) {
+  const status = document.getElementById('slip-status');
+  const zone = document.getElementById('upload-zone');
+
+  // Validate type
+  const ok = file.type.startsWith('image/') || file.type === 'application/pdf';
+  if (!ok) { showStatus('error', '⚠️ Please upload a JPG, PNG or PDF file.'); return; }
+
+  showStatus('loading', '🔍 Analysing salary slip with AI...');
+  zone.style.opacity = '0.6';
+  zone.style.pointerEvents = 'none';
+
+  try {
+    // Convert file to base64
+    const base64 = await fileToBase64(file);
+    const isPDF = file.type === 'application/pdf';
+    const mediaType = isPDF ? 'application/pdf' : file.type;
+
+    const prompt = `You are a salary slip parser. Extract the following fields from this salary slip and return ONLY a valid JSON object with no extra text, markdown, or explanation.
+
+Return this exact JSON structure (use 0 for any field not found):
+{
+  "grossSalary": <number - gross/total salary or CTC per month>,
+  "basicSalary": <number - basic salary per month>,
+  "da": <number - dearness allowance per month>,
+  "hra": <number - HRA received per month>,
+  "pf": <number - employee PF/EPF deduction per month>,
+  "professionalTax": <number - professional tax per month>,
+  "tds": <number - TDS deducted per month>,
+  "netSalary": <number - net take-home salary per month>,
+  "period": "<monthly or annual - indicate which period these numbers are for>"
+}
+
+Important: Return only the JSON object, no explanation.`;
+
+    const contentBlock = isPDF
+      ? { type: 'document', source: { type: 'base64', media_type: mediaType, data: base64 } }
+      : { type: 'image', source: { type: 'base64', media_type: mediaType, data: base64 } };
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{
+          role: 'user',
+          content: [contentBlock, { type: 'text', text: prompt }]
+        }]
+      })
+    });
+
+    const data = await response.json();
+    const text = data.content?.find(b => b.type === 'text')?.text || '';
+
+    // Parse JSON from response
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error('Could not parse response');
+    const parsed = JSON.parse(jsonMatch[0]);
+
+    // Populate fields — convert to monthly if annual
+    const factor = (parsed.period === 'annual') ? (1/12) : 1;
+    const gross = Math.round((parsed.grossSalary || 0) * factor);
+    const basic = Math.round((parsed.basicSalary || 0) * factor);
+    const da = Math.round((parsed.da || 0) * factor);
+    const hra = Math.round((parsed.hra || 0) * factor);
+    const pf = Math.round((parsed.pf || 0) * factor);
+    const tds = Math.round((parsed.tds || 0) * factor);
+
+    // Set mode to monthly since slip values are per month
+    setSalaryMode('monthly');
+
+    // Fill in salary fields
+    if (gross) document.getElementById('salary').value = gross;
+    if (basic) document.getElementById('basic').value = basic;
+    if (da) document.getElementById('da').value = da;
+
+    // Fill HRA in allowances tab
+    if (hra) document.getElementById('hra-rec').value = hra;
+
+    // Fill EPF in deductions
+    if (pf) document.getElementById('epf-own').value = pf * 12;
+
+    // Fill TDS paid (annual)
+    if (tds) document.getElementById('tds-paid').value = tds * 12;
+
+    update();
+
+    const filled = [
+      gross && `Gross: ₹${gross.toLocaleString('en-IN')}`,
+      basic && `Basic: ₹${basic.toLocaleString('en-IN')}`,
+      hra && `HRA: ₹${hra.toLocaleString('en-IN')}`,
+      pf && `PF: ₹${pf.toLocaleString('en-IN')}`,
+    ].filter(Boolean).join(' · ');
+
+    showStatus('success', `✅ Salary slip read! Auto-filled: ${filled || 'values updated'}. Review and adjust if needed.`);
+
+  } catch (err) {
+    console.error(err);
+    showStatus('error', '❌ Could not read slip. Please fill fields manually or try a clearer image.');
+  } finally {
+    zone.style.opacity = '1';
+    zone.style.pointerEvents = '';
+    document.getElementById('slip-file').value = '';
+  }
+}
+
+function fileToBase64(file) {
+  return new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result.split(',')[1]);
+    r.onerror = () => rej(new Error('Read failed'));
+    r.readAsDataURL(file);
+  });
+}
+
+function showStatus(type, msg) {
+  const el = document.getElementById('slip-status');
+  el.style.display = 'block';
+  const styles = {
+    loading: 'background:var(--blue2);border:1px solid var(--border2);color:var(--accent)',
+    success: 'background:var(--green2);border:1px solid rgba(5,150,105,0.25);color:var(--green)',
+    error: 'background:var(--red2);border:1px solid rgba(220,38,38,0.25);color:var(--red)'
+  };
+  el.style.cssText += ';' + styles[type];
+  el.textContent = msg;
+  if (type !== 'loading') setTimeout(() => { el.style.display = 'none'; }, 6000);
+}
+
+
+
 // ==================== STATE ====================
-let regime='new';
+let regime = 'new';
 
 // ==================== REGIME ====================
 function setRegime(r){
@@ -689,7 +907,14 @@ function update(){
   const hraP=cityV==='m'?.5:.4;
 
   // Income
-  const salary=gi('salary'), basic=gi('basic'), da=gi('da');
+  const salary=getAnnualSalary(), basic=getAnnualBasic(), da=getAnnualDA();
+  // Annual preview for monthly mode
+  if (salaryMode === 'monthly') {
+    document.getElementById('annual-ctc-preview').textContent = fc(salary);
+    document.getElementById('annual-basic-preview').textContent = fc(basic);
+    document.getElementById('annual-preview').style.display = gi('salary') > 0 ? '' : 'none';
+  }
+
   const biz=gi('biz');
   const ltcg=gi('ltcg'), stcg=gi('stcg'), ltcgOther=gi('ltcg-other'), buyback=gi('buyback');
   const fdInt=gi('fd-int'), sbInt=gi('sb-int'), dividend=gi('dividend');
@@ -891,7 +1116,7 @@ function update(){
     const taxable=normalTaxable>s.a?Math.max(0,Math.min(normalTaxable,s.b===1e15?normalTaxable:s.b)-s.a):0;
     const tax=taxable*s.r;
     const w=normalTaxable>0?Math.min(100,taxable/normalTaxable*100):0;
-    const col=s.r===0?'#22c55e':s.r>=.3?'#ef4444':'#f59e0b';
+    const col=s.r===0?'#059669':s.r>=.3?'#dc2626':'#2563eb';
     const tc=s.r===0?'var(--green)':s.r>=.3?'var(--red)':'var(--accent)';
     return `<div class="slab-row" style="opacity:${normalTaxable>s.a?1:.25}">
       <div class="sr-range">${s.b===1e15?'>'+fmt(s.a/1e5)+'L':fmt(s.a/1e5)+'–'+fmt(s.b/1e5)+'L'}</div>
@@ -907,12 +1132,23 @@ function update(){
     `<div class="tax-row bld"><div class="tl">Total Deductions</div><div class="tv">${fc(totalDed)}</div></div>`
     :'<div style="font-size:11px;color:var(--text3);padding:6px 0">Enter your income and deduction details on the left.</div>';
 
-  // ===== CHANGES LIST =====
-  document.getElementById('changes-list').innerHTML=CHANGES.map(([icon,title,sub])=>`
-    <div class="change-item">
-      <div class="ci-dot"></div>
-      <div><div class="ci-title">${icon} ${title}</div><div class="ci-sub">${sub}</div></div>
-    </div>`).join('');
+  // ===== CHANGES LIST — compact pills =====
+  document.getElementById('changes-list').innerHTML=
+    `<div style="display:flex;flex-wrap:wrap;gap:6px">`+
+    CHANGES.map(([icon,title,sub])=>
+      `<div title="${sub}" style="display:flex;align-items:center;gap:5px;padding:5px 10px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;font-size:11px;color:var(--text2);cursor:default;white-space:nowrap">
+        <span style="font-size:12px">${icon}</span><span>${title}</span>
+      </div>`
+    ).join('')+`</div>`;
+}
+
+// Sum tab switcher
+function showSumTab(id,btn){
+  document.querySelectorAll('.sum-panel').forEach(p=>p.style.display='none');
+  document.querySelectorAll('.sum-tab').forEach(b=>{b.style.color='var(--text3)';b.style.borderBottom='2px solid transparent';});
+  document.getElementById('sum-'+id).style.display='block';
+  btn.style.color='var(--accent)';
+  btn.style.borderBottom='2px solid var(--accent)';
 }
 
 // Simple calc for regime comparison (uses same inputs but different regime)
@@ -943,6 +1179,7 @@ function copyLink(){
 }
 
 // Init
+setSalaryMode('monthly');
 setRegime('new');
 </script>
 </body>
