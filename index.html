@@ -11,22 +11,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #f0f4ff;
-  --surface: #ffffff;
-  --surface2: #eef2fb;
-  --border: rgba(37,99,235,0.1);
-  --border2: rgba(37,99,235,0.2);
-  --text: #0f172a;
-  --text2: #334155;
-  --text3: #94a3b8;
-  --accent: #2563eb;
-  --accent2: rgba(37,99,235,0.08);
-  --green: #059669;
-  --green2: rgba(5,150,105,0.08);
-  --red: #dc2626;
-  --red2: rgba(220,38,38,0.08);
-  --blue: #2563eb;
-  --blue2: rgba(37,99,235,0.08);
+  --bg: #09090b;
+  --surface: #18181b;
+  --surface2: #27272a;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.14);
+  --text: #fafafa;
+  --text2: #a1a1aa;
+  --text3: #52525b;
+  --accent: #f59e0b;
+  --accent2: rgba(245,158,11,0.12);
+  --green: #22c55e;
+  --green2: rgba(34,197,94,0.1);
+  --red: #ef4444;
+  --red2: rgba(239,68,68,0.1);
+  --blue: #3b82f6;
+  --blue2: rgba(59,130,246,0.1);
   --mono: 'JetBrains Mono', monospace;
   --sans: 'Inter', sans-serif;
   --display: 'Syne', sans-serif;
@@ -40,18 +40,17 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 /* HEADER */
 .header {
   position: sticky; top: 0; z-index: 100;
-  background: #1d4ed8;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  background: rgba(9,9,11,0.92); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
   padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;
-  box-shadow: 0 2px 12px rgba(37,99,235,0.25);
 }
 .header-left { display: flex; align-items: center; gap: 12px; }
-.logo { width: 36px; height: 36px; border-radius: 9px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-.header-title { font-family: var(--display); font-size: 15px; font-weight: 800; letter-spacing: -0.02em; color: #fff; }
-.header-sub { font-size: 10px; color: rgba(255,255,255,0.7); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.logo { width: 36px; height: 36px; border-radius: 9px; background: linear-gradient(135deg,#f59e0b,#ef4444); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.header-title { font-family: var(--display); font-size: 15px; font-weight: 800; letter-spacing: -0.02em; }
+.header-sub { font-size: 10px; color: var(--accent); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 .header-right { display: flex; align-items: center; gap: 8px; }
-.badge-pill { font-size: 10px; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.12); }
-.badge-pill.active { border-color: #fff; color: #fff; background: rgba(255,255,255,0.2); }
+.badge-pill { font-size: 10px; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--border2); color: var(--text2); background: var(--surface); }
+.badge-pill.active { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
 
 /* LAYOUT */
 .layout { display: flex; min-height: calc(100vh - 61px); }
@@ -66,46 +65,46 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 /* REGIME SELECTOR */
 .regime-grid { display: flex; gap: 8px; margin-bottom: 10px; }
 .regime-btn { flex: 1; padding: 12px 10px; border-radius: var(--radius); border: 1.5px solid var(--border2); background: var(--surface2); cursor: pointer; text-align: center; transition: all 0.18s; }
-.regime-btn:hover { border-color: var(--accent); background: var(--accent2); }
-.regime-btn.active { border-color: var(--accent); background: var(--accent2); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+.regime-btn:hover { border-color: var(--accent); }
+.regime-btn.active { border-color: var(--accent); background: var(--accent2); }
 .regime-btn .rl { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); margin-bottom: 5px; }
 .regime-btn.active .rl { color: var(--accent); }
 .regime-btn .rv { font-size: 16px; font-family: var(--mono); font-weight: 500; color: var(--text); }
-.regime-badge { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 2px 7px; border-radius: 20px; margin-top: 5px; }
+.regime-badge { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent); color: #000; padding: 2px 7px; border-radius: 20px; margin-top: 5px; }
 .saving-line { text-align: center; font-size: 11px; color: var(--green); font-weight: 500; margin-top: 6px; min-height: 16px; }
 
 /* TABS */
-.tabs { display: flex; background: var(--surface2); border-radius: var(--radius-sm); padding: 3px; margin-bottom: 12px; gap: 2px; border: 1px solid var(--border); }
+.tabs { display: flex; background: var(--surface2); border-radius: var(--radius-sm); padding: 3px; margin-bottom: 12px; gap: 2px; }
 .tab-btn { flex: 1; padding: 7px 6px; border: none; background: transparent; color: var(--text3); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; border-radius: 5px; transition: all 0.15s; }
-.tab-btn:hover { color: var(--accent); background: var(--accent2); }
-.tab-btn.active { background: var(--accent); color: #fff; box-shadow: 0 1px 4px rgba(37,99,235,0.3); }
+.tab-btn:hover { color: var(--text2); }
+.tab-btn.active { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
 /* ACCORDION */
 .acc { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 8px; overflow: hidden; }
 .acc-trigger { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; cursor: pointer; background: var(--surface2); transition: background 0.15s; user-select: none; }
-.acc-trigger:hover { background: var(--accent2); }
+.acc-trigger:hover { background: rgba(255,255,255,0.04); }
 .acc-trigger span { font-size: 11px; font-weight: 600; color: var(--text2); display: flex; align-items: center; gap: 6px; }
 .acc-icon { width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; color: var(--text3); font-size: 10px; transition: transform 0.2s; }
 .acc[open] .acc-icon { transform: rotate(180deg); }
-.acc[open] .acc-trigger { background: var(--accent2); }
-.acc-body { padding: 12px; background: var(--surface); border-top: 1px solid var(--border); }
+.acc[open] .acc-trigger { background: rgba(255,255,255,0.02); }
+.acc-body { padding: 12px; background: var(--bg); border-top: 1px solid var(--border); }
 
 /* FORM ELEMENTS */
 .field { margin-bottom: 10px; }
 label { display: block; font-size: 10px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 4px; }
 input[type=number], select {
   width: 100%; padding: 8px 10px;
-  background: #fff; border: 1px solid var(--border2);
+  background: var(--surface2); border: 1px solid var(--border2);
   border-radius: var(--radius-sm); color: var(--text);
   font-family: var(--mono); font-size: 12px; outline: none;
-  transition: border-color 0.15s, box-shadow 0.15s; -moz-appearance: textfield; appearance: textfield;
+  transition: border-color 0.15s; -moz-appearance: textfield; appearance: textfield;
 }
 input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
-input[type=number]:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+input[type=number]:focus, select:focus { border-color: var(--accent); }
 select { font-family: var(--sans); cursor: pointer; }
-select option { background: #fff; color: var(--text); }
+select option { background: #18181b; }
 .hint { font-size: 10px; color: var(--text3); margin-top: 3px; line-height: 1.5; }
 .row2 { display: flex; gap: 8px; }
 .row2 > .field { flex: 1; }
@@ -119,16 +118,16 @@ select option { background: #fff; color: var(--text); }
 .tag-both { background: var(--green2); color: var(--green); border: 1px solid rgba(34,197,94,0.2); }
 
 /* RESULT PANEL */
-.big-result { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 60%, #3b82f6 100%); border: none; border-radius: var(--radius); padding: 20px; margin-bottom: 10px; text-align: center; box-shadow: 0 4px 20px rgba(37,99,235,0.3); }
-.big-result .lbl { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.75); margin-bottom: 6px; }
-.big-result .amount { font-size: 38px; font-family: var(--mono); font-weight: 500; color: #fff; line-height: 1; margin-bottom: 6px; }
-.big-result .eff { font-size: 11px; color: rgba(255,255,255,0.65); }
-.big-result .eff strong { color: rgba(255,255,255,0.9); }
-.inhand { display: flex; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.2); }
+.big-result { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 10px; text-align: center; }
+.big-result .lbl { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text2); margin-bottom: 6px; }
+.big-result .amount { font-size: 38px; font-family: var(--mono); font-weight: 500; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+.big-result .eff { font-size: 11px; color: var(--text3); }
+.big-result .eff strong { color: var(--text2); }
+.inhand { display: flex; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
 .inhand-item { flex: 1; text-align: center; }
-.inhand-item + .inhand-item { border-left: 1px solid rgba(255,255,255,0.2); }
-.inhand-item .il { font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-.inhand-item .iv { font-size: 14px; font-family: var(--mono); font-weight: 500; color: #fff; }
+.inhand-item + .inhand-item { border-left: 1px solid var(--border); }
+.inhand-item .il { font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.inhand-item .iv { font-size: 14px; font-family: var(--mono); font-weight: 500; color: var(--green); }
 
 /* REBATE BANNER */
 .rebate-banner { background: var(--green2); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-sm); padding: 9px 12px; margin-bottom: 10px; font-size: 11px; color: var(--green); display: flex; gap: 8px; align-items: center; }
@@ -165,12 +164,12 @@ select option { background: #fff; color: var(--text); }
 .ci-sub { font-size: 10px; color: var(--text3); margin-top: 1px; }
 
 /* FOOTER */
-.footer { border-top: 1px solid var(--border); padding: 24px 20px; background: #fff; margin-top: 0; }
+.footer { border-top: 1px solid var(--border); padding: 24px 20px; background: var(--surface); margin-top: 0; }
 .footer-inner { max-width: 900px; margin: 0 auto; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
 .footer-note { font-size: 11px; color: var(--text3); line-height: 1.6; max-width: 600px; }
 .footer-share { display: flex; gap: 8px; flex-wrap: wrap; }
 .share-btn { padding: 7px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid var(--border2); background: var(--surface2); color: var(--text2); transition: all 0.15s; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
-.share-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
+.share-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 /* SPECIAL RESULT ROWS */
 .tds-result { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 10px; display: flex; justify-content: space-between; font-size: 11px; margin-top: 6px; }
@@ -183,11 +182,10 @@ select option { background: #fff; color: var(--text); }
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(37,99,235,0.2); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(37,99,235,0.4); }
+::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 2px; }
 
 /* SHARE TOAST */
-.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(60px); background: #1d4ed8; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 8px 18px; font-size: 12px; color: #fff; opacity: 0; transition: all 0.3s; z-index: 999; box-shadow: 0 4px 16px rgba(37,99,235,0.4); }
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(60px); background: var(--surface); border: 1px solid var(--border2); border-radius: 20px; padding: 8px 18px; font-size: 12px; color: var(--text); opacity: 0; transition: all 0.3s; z-index: 999; }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
 </head>
@@ -205,7 +203,7 @@ select option { background: #fff; color: var(--text); }
   <div class="header-right">
     <span class="badge-pill active" id="regime-badge">New Regime</span>
     <span class="badge-pill">Free · No login</span>
-    <button class="share-btn" style="border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.15);color:#fff" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'" onclick="copyLink()">🔗 Share</button>
+    <button class="share-btn" onclick="copyLink()">🔗 Share</button>
   </div>
 </header>
 
@@ -578,34 +576,33 @@ select option { background: #fff; color: var(--text); }
     🎉 Section 87A rebate of <strong id="rebate-amt">₹0</strong> applied — <span id="rebate-desc"></span>
   </div>
 
-  <!-- Compact summary card -->
-  <div class="card" style="padding:0;overflow:hidden">
-    <div style="display:flex;border-bottom:1px solid var(--border);background:var(--surface2)">
-      <button class="sum-tab active" onclick="showSumTab('breakdown',this)" style="flex:1;padding:9px 4px;border:none;background:transparent;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;color:var(--accent);border-bottom:2px solid var(--accent)">📋 Breakdown</button>
-      <button class="sum-tab" onclick="showSumTab('slabs',this)" style="flex:1;padding:9px 4px;border:none;background:transparent;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;color:var(--text3);border-bottom:2px solid transparent">📊 Slabs</button>
-      <button class="sum-tab" onclick="showSumTab('deductions',this)" style="flex:1;padding:9px 4px;border:none;background:transparent;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;color:var(--text3);border-bottom:2px solid transparent">🧾 Deductions</button>
-      <button class="sum-tab" onclick="showSumTab('fy27',this)" style="flex:1;padding:9px 4px;border:none;background:transparent;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;color:var(--text3);border-bottom:2px solid transparent">🆕 FY27</button>
-    </div>
-
-    <div id="sum-breakdown" class="sum-panel" style="padding:14px">
-      <div id="breakdown"></div>
-    </div>
-
-    <div id="sum-slabs" class="sum-panel" style="display:none;padding:14px">
-      <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text3);margin-bottom:10px" id="slabs-title">Tax Slab Rates — New Regime</div>
-      <div id="slabs"></div>
-    </div>
-
-    <div id="sum-deductions" class="sum-panel" style="display:none;padding:14px">
-      <div id="ded-summary"></div>
-    </div>
-
-    <div id="sum-fy27" class="sum-panel" style="display:none;padding:14px">
-      <div id="changes-list"></div>
-    </div>
+  <!-- Breakdown -->
+  <div class="card">
+    <div class="card-title">📋 Tax Computation Breakdown</div>
+    <div id="breakdown"></div>
   </div>
 
-  <div class="disclaimer">⚠️ For educational purposes only. Consult a qualified CA before filing. Based on Union Budget 2026 &amp; Income Tax Act 2025.</div>
+  <!-- Slabs -->
+  <div class="card">
+    <div class="card-title" id="slabs-title">📊 Tax Slab Rates — New Regime</div>
+    <div id="slabs"></div>
+  </div>
+
+  <!-- Deduction Summary -->
+  <div class="card">
+    <div class="card-title">🧾 Deduction Summary</div>
+    <div id="ded-summary"></div>
+  </div>
+
+  <!-- FY27 Changes -->
+  <div class="card">
+    <div class="card-title">🆕 All FY 2026-27 Changes Applied</div>
+    <div id="changes-list"></div>
+  </div>
+
+  <div class="disclaimer">
+    ⚠️ This calculator is for <strong>educational and informational purposes only</strong>. Actual tax liability may vary based on your specific circumstances, applicable rules, and any changes not captured here. Please consult a qualified Chartered Accountant or tax advisor before filing your income tax return. Based on Union Budget 2026 and Income Tax Act 2025.
+  </div>
 
 </div><!-- end panel-right -->
 </div><!-- end layout -->
@@ -894,7 +891,7 @@ function update(){
     const taxable=normalTaxable>s.a?Math.max(0,Math.min(normalTaxable,s.b===1e15?normalTaxable:s.b)-s.a):0;
     const tax=taxable*s.r;
     const w=normalTaxable>0?Math.min(100,taxable/normalTaxable*100):0;
-    const col=s.r===0?'#059669':s.r>=.3?'#dc2626':'#2563eb';
+    const col=s.r===0?'#22c55e':s.r>=.3?'#ef4444':'#f59e0b';
     const tc=s.r===0?'var(--green)':s.r>=.3?'var(--red)':'var(--accent)';
     return `<div class="slab-row" style="opacity:${normalTaxable>s.a?1:.25}">
       <div class="sr-range">${s.b===1e15?'>'+fmt(s.a/1e5)+'L':fmt(s.a/1e5)+'–'+fmt(s.b/1e5)+'L'}</div>
@@ -910,23 +907,12 @@ function update(){
     `<div class="tax-row bld"><div class="tl">Total Deductions</div><div class="tv">${fc(totalDed)}</div></div>`
     :'<div style="font-size:11px;color:var(--text3);padding:6px 0">Enter your income and deduction details on the left.</div>';
 
-  // ===== CHANGES LIST — compact pills =====
-  document.getElementById('changes-list').innerHTML=
-    `<div style="display:flex;flex-wrap:wrap;gap:6px">`+
-    CHANGES.map(([icon,title,sub])=>
-      `<div title="${sub}" style="display:flex;align-items:center;gap:5px;padding:5px 10px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;font-size:11px;color:var(--text2);cursor:default;white-space:nowrap">
-        <span style="font-size:12px">${icon}</span><span>${title}</span>
-      </div>`
-    ).join('')+`</div>`;
-}
-
-// Sum tab switcher
-function showSumTab(id,btn){
-  document.querySelectorAll('.sum-panel').forEach(p=>p.style.display='none');
-  document.querySelectorAll('.sum-tab').forEach(b=>{b.style.color='var(--text3)';b.style.borderBottom='2px solid transparent';});
-  document.getElementById('sum-'+id).style.display='block';
-  btn.style.color='var(--accent)';
-  btn.style.borderBottom='2px solid var(--accent)';
+  // ===== CHANGES LIST =====
+  document.getElementById('changes-list').innerHTML=CHANGES.map(([icon,title,sub])=>`
+    <div class="change-item">
+      <div class="ci-dot"></div>
+      <div><div class="ci-title">${icon} ${title}</div><div class="ci-sub">${sub}</div></div>
+    </div>`).join('');
 }
 
 // Simple calc for regime comparison (uses same inputs but different regime)
